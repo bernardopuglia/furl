@@ -1,23 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version is 3.2.2 with rails 7.0
 
-* System dependencies
+* Database: this app does not rely on any database yet, for all purposes it uses an embedded sqlite as a starting point
 
-* Configuration
+* To run the test suite: `rspec`
 
-* Database: this app does not rely on any database yet, all its feature are stateless so far
+* To run locally
+  * Be sure to have ruby and bundler installed (use `gem install bundler` if you need to)
+  * Install all dependencies using `bundle install`
+  * Spin a server using `bundle exec rails s` and access the application on localhost:3000
 
-
-* How to run the test suite: rspec
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* TODO List
+  * Add bootstrap for better visuals
+  * Add a spec to the controller, I only tested the service for its priority within the given time
+  * Add rubocop to ensure code quality according to standards
+  * Add support for choosing which tags the customer wants to list, interface is still locked on `img` and `a`, but the service already supports any given tag and its main attribute to read from
