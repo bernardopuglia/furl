@@ -1,1 +1,26 @@
-Hey there!
+<%= form_with url: "/", method: :get do |form| %>
+  <%= form.label :base_url, "URL:" %>
+  <%= form.text_field :base_url %>
+  <%= form.submit "Fetch" %>
+<% end %>
+
+<%- if @error %>
+  <span style="color: red"><%= @error %></span>
+<% end %>
+
+<%- if @content %>
+<div>
+  <%- @content.each do |tag, content| %>
+    <p>
+      <div><h3><%= tag %></h3></div>
+      <div>
+        <ul>
+          <%- content.each do |item| %>
+            <li><a href=<%= item %>><%= item %></a>
+          <% end %>
+        </ul>
+      </div>
+    </p>
+  <% end %>
+</div>
+<% end %>

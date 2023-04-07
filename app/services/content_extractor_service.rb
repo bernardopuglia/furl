@@ -10,5 +10,9 @@ class ContentExtractorService
     end
 
     final_stuff
+  rescue URI::InvalidURIError
+    raise "URL is invalid: #{base_url}"
+  rescue StandardError => error
+    raise "An unexpected error has occured: #{error.message}"
   end
 end
