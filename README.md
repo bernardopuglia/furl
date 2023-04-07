@@ -15,4 +15,5 @@
   * Add bootstrap for better visuals
   * Add a spec to the controller, I only tested the service for its priority within the given time
   * Add rubocop to ensure code quality according to standards
+  * Add better state messages (blank state for the initial form, empty state for tags without any instance of items after a search)
   * Add support for choosing which tags the customer wants to list, interface is still locked on `img` and `a`, but the service already supports any given tag and its main attribute to read from

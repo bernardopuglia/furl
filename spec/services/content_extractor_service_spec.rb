@@ -52,7 +52,6 @@ describe ContentExtractorService, type: :service do
       let(:desired_content) { {'img': 'src', 'a': 'href'} }
 
       it 'raises an error for the invalid url' do
-
         expect { subject }.to(raise_error('URL is invalid: not a valid url'))
       end
     end
