@@ -3,13 +3,13 @@ class ContentExtractorService
     content = RestClient.get(base_url).body
     parsed_content = Nokogiri::HTML(content)
 
-    final_stuff = {}
+    extracted_content = {}
 
-    desired_content.each do |key,value|
-      final_stuff.merge!(key => parsed_content.css(key.to_s).map { |tag| tag[value] })
+    desired_content.each do |key, value|
+      extracted_content.merge!(key => parsed_content.css(key.to_s).map { |tag| tag[value] })
     end
 
-    final_stuff
+    extracted_content
   rescue URI::InvalidURIError
     raise "URL is invalid: #{base_url}"
   rescue StandardError => error
